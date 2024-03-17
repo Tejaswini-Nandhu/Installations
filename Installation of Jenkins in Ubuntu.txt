@@ -1,0 +1,37 @@
+Installation of Jenkins in Ubuntu
+
+1.first switched to root user
+2.check for java using 
+      java --version 
+3.if not present install java : sudo apt install openjdk-11-jre-headless  # version 11.0.20.1+1-0ubuntu1~22.04
+4. To get the debian package repository of jenkins add the key to our system using the Url given below
+    
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+    https://pkg.jenkins.io/debian/jenkins.io-2023.key
+
+5. Then add a Jenkins apt repository entry:
+ 
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+    https://pkg.jenkins.io/debian binary/ | sudo tee \
+    /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+6. Update the local package : sudo apt-get update
+7. Install Jenkins: sudo apt-get install jenkins
+
+8. To start the service of jenkins we should use the cmd
+
+sudo systemctl start jenkins
+
+9. To check the status of jenkins : sudo systemctl status jenkins
+
+10. To enable jenkins : sudo systemctl enable jenkins
+
+11. To stop : sudo systemctl stop jenkins
+
+12. To disable: sudo systemctl disable jenkins
+
+13. Default port number of jenkins is 8080
+
+Reference : https://pkg.origin.jenkins.io/debian/
+
+

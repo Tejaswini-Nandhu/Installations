@@ -1,0 +1,29 @@
+Maven installation in ubuntu
+
+To run maven Java is prerequisite so we need to install Java.
+JDK- java development kit
+JRE- Java runing environment
+
+cmd to get the version of java:  java --version
+
+cmd to install java in ubuntu:  sudo apt install openjdk-11-jre-headless  # version 11.0.20.1+1-0ubuntu1~22.04
+
+cmd to get the tar file of MAVEN: 
+       
+               wget https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz
+     
+cmd to unzip the tar file and intall maven: sudo tar xzf apache-maven-3.9.6-bin.tar.gz
+     
+cmd to set the environmet variable file path: sudo vi /etc/profile.d/maven.sh
+                
+############
+export M2_HOME=/home/nandhu_tejaswini/apache-maven-3.9.6
+export PATH=$PATH://home/nandhu_tejaswini/apache-maven-3.9.6/bin
+############
+     
+cmd to set the environmet variable: source /etc/profile.d/maven.sh
+
+cmd to check the version of maven: mvn -version
+
+cmd to uninstall maven:  sudo rm -rf apache-maven-3.9.6
+   
